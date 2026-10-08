@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://biujtpoxu2406"]
+
+[ext_resource type="Script" uid="uid://bi6d485kijrag" path="res://scripts/knight/KnightMovement.gd" id="1_e038n"]
+[ext_resource type="SpriteFrames" uid="uid://siifm55p40rq" path="res://anim_spriteframes/knight_color1_outline_sprite_frames.tres" id="2_p4ddg"]
+[ext_resource type="TileSet" uid="uid://be544kpyw3ma0" path="res://tilesets/platformer.tres" id="3_p4ddg"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n1dk5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ag6p6"]
+size = Vector2(258, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dop2r"]
+size = Vector2(20, 71)
+
+[node name="Node2D" type="Node2D" unique_id=618142933]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1692537652]
+position = Vector2(162, 85)
+script = ExtResource("1_e038n")
+fall_blend_threshold = 50.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1026996498]
+texture_filter = 1
+position = Vector2(4, -26)
+sprite_frames = ExtResource("2_p4ddg")
+animation = &"Run"
+frame_progress = 0.03355779
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1537069789]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_n1dk5")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=69448262]
+position = Vector2(163, 146)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=248307854]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_ag6p6")
+debug_color = Color(0.745098, 0.462745, 0, 0.419608)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=801147239]
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1935478974]
+position = Vector2(163, 146)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2" unique_id=943568827]
+position = Vector2(108, -43)
+shape = SubResource("RectangleShape2D_dop2r")
+debug_color = Color(0.745098, 0.462745, 0, 0.419608)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1669635091]
+tile_set = ExtResource("3_p4ddg")
+
+[connection signal="animation_changed" from="CharacterBody2D/AnimatedSprite2D" to="CharacterBody2D" method="_on_animated_sprite_2d_animation_changed"]
+[connection signal="animation_finished" from="CharacterBody2D/AnimatedSprite2D" to="CharacterBody2D" method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="animation_looped" from="CharacterBody2D/AnimatedSprite2D" to="CharacterBody2D" method="_on_animated_sprite_2d_animation_looped"]
