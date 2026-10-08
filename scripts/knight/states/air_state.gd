@@ -20,7 +20,7 @@ func _physics_process(delta):
 	sync_air_anim()
 
 	if body.is_on_floor():
-		if body.input_x:
+		if body.input_movement.x:
 			machine.change_state("run")
 		else:
 			machine.change_state("idle")

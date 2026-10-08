@@ -31,7 +31,6 @@ func _process(delta):
 			if attack_end_hold <= 0:
 				on_end_attack()
 
-
 func _physics_process(delta):
 	body.apply_gravity(delta)
 	body.apply_friction(delta)
@@ -40,7 +39,10 @@ func _physics_process(delta):
 		machine.change_state("air")
 
 func on_anim_finished():
-	attack_end_hold = 0.2
+	if attack_num % 2 == 0:
+		attack_end_hold = 8.0 / 60.0
+	else:
+		attack_end_hold = 4 / 60.0
 
 func on_end_attack():
 	machine.change_state("idle")

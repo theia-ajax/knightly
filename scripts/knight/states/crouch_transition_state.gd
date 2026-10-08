@@ -26,12 +26,10 @@ func _process(delta):
 
 	if direction > 0:
 		if timer >= duration:
-			if body.input_x:
+			if body.input_movement.x:
 				machine.change_state("crouch_walk")
 			else:
 				machine.change_state("crouch_idle")
 	elif direction < 0:
 		if timer <= 0.0:
 			machine.change_state("idle")
-
-

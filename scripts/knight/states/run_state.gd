@@ -16,10 +16,10 @@ func _process(delta):
 	body.sync_sprite_facing()
 	body.try_attack("attack")
 	
-	if not body.input_x:
+	if not body.input_movement.x:
 		machine.change_state("idle")
 	
-	if body.input_y < 0:
+	if body.input_movement.y < 0:
 		machine.change_state("crouch_transition")
 
 func _physics_process(delta):

@@ -9,9 +9,9 @@ func _process(delta):
 	body.sync_sprite_facing()
 	body.try_attack("attack")
 
-	if body.input_x:
+	if body.input_movement.x:
 		machine.change_state("run")
-	if body.input_y < 0:
+	if body.input_movement.y < 0:
 		machine.change_state("crouch_transition")
 
 func _physics_process(delta):

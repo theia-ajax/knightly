@@ -14,10 +14,11 @@ const JUMP_VELOCITY = -300.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var facing = 1
 
-var input_x = 0
-var input_y = 0
+var input_movement = Vector2(0, 0)
 var jump_request = false
 var attack_request = false
+var dash_request = false
+var roll_request = false
 
 var walk_move_accel = 800.0
 var walk_max_speed = 140.0
@@ -54,28 +55,26 @@ func _draw():
 	draw_string(debug_font, Vector2(0, 10), "state: %s" % state_machine.get_active_state_name(), HORIZONTAL_ALIGNMENT_LEFT, -1, 8)
 
 func _process(delta):
-	if Input.is_action_just_pressed("jump"):
+	if Input.is_action_just_pressed("Jump"):
 		jump_request = true
-		
-	attack_request = false
-	if Input.is_action_just_pressed("attack"):
-		attack_request = true
+
+	attack_request = Input.is_action_just_pressed("Attack")
+	dash_request = Input.is_action_just_pressed("Dash")
+	roll_request = Input.is_action_just_pressed("Roll")
 
 func _physics_process(delta):
-	if jump_request and not is_on_floor():
+	if not is_on_floor():
 		jump_request = false
+		roll_request = false
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	input_x = Input.get_axis("ui_left", "ui_right")
-	input_y = Input.get_axis("ui_down", "ui_up")
+	input_movement.x = Input.get_axis("MoveLeft", "MoveRight")
+	input_movement.y = Input.get_axis("MoveDown", "MoveUp")
 	
-	if input_x:
-		facing = input_x
+	if input_movement.x:
+		facing = input_movement.x
 		
 	queue_redraw()
-
-
+	
 func do_jump_if_valid():
 	if jump_request and is_on_floor():
 		velocity.y = JUMP_VELOCITY
@@ -86,7 +85,7 @@ func apply_gravity(delta):
 		velocity.y += gravity * delta
 
 func apply_walk_accel(delta):
-	var change = walk_move_accel * input_x * delta
+	var change = walk_move_accel * input_movement.x * delta
 
 	# acceleration cannot accelerate past max speed
 	# however if already past max speed won't immediately clamp velocity to it
