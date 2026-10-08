@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=150 format=3 uid="uid://siifm55p40rq"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://siifm55p40rq"]
 
 [ext_resource type="Texture2D" uid="uid://hydry8a7d6p0" path="res://spritesheets/knight_color1_outline.sprites/Knight_Attack_00.tres" id="1_hunm6"]
 [ext_resource type="Texture2D" uid="uid://buuqs41uvuf78" path="res://spritesheets/knight_color1_outline.sprites/Knight_Attack_01.tres" id="2_2rlo6"]
@@ -165,7 +165,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("4_du5x0")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Attack",
 "speed": 15.0
 }, {
@@ -188,7 +188,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("10_1557a")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Attack2",
 "speed": 15.0
 }, {
@@ -196,7 +196,7 @@ animations = [{
 "duration": 0.8,
 "texture": ExtResource("11_qq43o")
 }, {
-"duration": 1.0,
+"duration": 0.8,
 "texture": ExtResource("12_yaijv")
 }, {
 "duration": 1.0,
@@ -208,12 +208,12 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("15_4v82n")
 }, {
-"duration": 1.0,
+"duration": 2.0,
 "texture": ExtResource("16_fyvc6")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Attack2NoMovement",
-"speed": 15.0
+"speed": 30.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -246,7 +246,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("26_oouqk")
 }],
-"loop": false,
+"loop": 0,
 "name": &"AttackCombo2hit",
 "speed": 15.0
 }, {
@@ -281,7 +281,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("36_fk2o1")
 }],
-"loop": false,
+"loop": 0,
 "name": &"AttackComboNoMovement",
 "speed": 15.0
 }, {
@@ -295,18 +295,18 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("39_0gv46")
 }, {
-"duration": 1.0,
+"duration": 2.0,
 "texture": ExtResource("40_4kg8u")
 }],
-"loop": false,
+"loop": 0,
 "name": &"AttackNoMovement",
-"speed": 15.0
+"speed": 30.0
 }, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("41_xyuv5")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Crouch",
 "speed": 15.0
 }, {
@@ -323,7 +323,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("45_0no4n")
 }],
-"loop": false,
+"loop": 0,
 "name": &"CrouchAttack",
 "speed": 15.0
 }, {
@@ -337,7 +337,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("48_u854h")
 }],
-"loop": true,
+"loop": 1,
 "name": &"CrouchFull",
 "speed": 15.0
 }, {
@@ -345,7 +345,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("49_lvkqo")
 }],
-"loop": true,
+"loop": 1,
 "name": &"CrouchTransition",
 "speed": 15.0
 }, {
@@ -374,7 +374,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("57_fhlwf")
 }],
-"loop": true,
+"loop": 1,
 "name": &"CrouchWalk",
 "speed": 15.0
 }, {
@@ -385,7 +385,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("59_3d6lb")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Dash",
 "speed": 15.0
 }, {
@@ -420,7 +420,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("69_dnc2a")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Death",
 "speed": 15.0
 }, {
@@ -455,7 +455,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("79_877tv")
 }],
-"loop": true,
+"loop": 1,
 "name": &"DeathNoMovement",
 "speed": 15.0
 }, {
@@ -469,7 +469,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("82_demrf")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Fall",
 "speed": 15.0
 }, {
@@ -477,7 +477,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("83_8xsky")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Hit",
 "speed": 15.0
 }, {
@@ -512,7 +512,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("93_roo6x")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Idle",
 "speed": 15.0
 }, {
@@ -526,7 +526,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("96_0jxyr")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Jump",
 "speed": 15.0
 }, {
@@ -537,7 +537,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("98_l8qat")
 }],
-"loop": false,
+"loop": 0,
 "name": &"JumpFallInbetween",
 "speed": 15.0
 }, {
@@ -578,7 +578,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("110_s3iuo")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Roll",
 "speed": 24.0
 }, {
@@ -613,9 +613,9 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("120_ddbg6")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Run",
-"speed": 15.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -624,7 +624,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("122_2kbfl")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Slide",
 "speed": 15.0
 }, {
@@ -641,7 +641,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("126_6v26e")
 }],
-"loop": true,
+"loop": 1,
 "name": &"SlideFull",
 "speed": 15.0
 }, {
@@ -649,7 +649,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("127_g0kpw")
 }],
-"loop": true,
+"loop": 1,
 "name": &"SlideTransitionEnd",
 "speed": 15.0
 }, {
@@ -657,7 +657,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("128_uixoo")
 }],
-"loop": true,
+"loop": 1,
 "name": &"SlideTransitionStart",
 "speed": 15.0
 }, {
@@ -671,7 +671,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("131_37dii")
 }],
-"loop": true,
+"loop": 1,
 "name": &"TurnAround",
 "speed": 15.0
 }, {
@@ -697,7 +697,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("138_lxv42")
 }],
-"loop": true,
+"loop": 1,
 "name": &"WallClimb",
 "speed": 15.0
 }, {
@@ -723,7 +723,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("145_smbfp")
 }],
-"loop": true,
+"loop": 1,
 "name": &"WallClimbNoMovement",
 "speed": 15.0
 }, {
@@ -731,7 +731,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("146_llyjl")
 }],
-"loop": true,
+"loop": 1,
 "name": &"WallHang",
 "speed": 15.0
 }, {
@@ -745,7 +745,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("149_efqac")
 }],
-"loop": true,
+"loop": 1,
 "name": &"WallSlide",
 "speed": 15.0
 }]
